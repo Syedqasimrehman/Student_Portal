@@ -1,13 +1,243 @@
-body {
+/* @import url("./Components/Pages.css"); */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.back-arrow {
+  display: flex;
+  color: #fff;
+  top: 50%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-size: 19px;
+  width: 25px;
+  height: 25px;
+  left: 14%;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+.back-arrow > svg {
+  cursor: pointer;
+}
+.back-arrow > svg:hover {
+  color: rgb(81, 125, 215);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  /* transform: translate(-101%); */
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 99%;
+  justify-content: center;
+  /* background: rgba(0, 0, 0, .1); */
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 80px 80px;
+  border-bottom-right-radius: 80px 80px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+  transition: all 0.5s ease;
 }
+
+.Dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  flex-direction: row;
+  color: white;
+  background: rgb(81, 125, 215);
+  margin-top: 24px;
+  padding: 2rem 5rem;
+  width: 100%;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.8s ease;
+  border-top-right-radius: 80px 80px;
+}
+.Dashboard:hover {
+  background: rgb(91, 135, 225);
+}
+nav > ul {
+  margin-top: 2rem;
+  padding: 10px;
+}
+nav > ul > li {
+  list-style: none;
+  margin: 20px;
+  /* text-align: center; */
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  font-size: 19px;
+}
+nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+}
+nav > ul > li > a > svg {
+  margin-right: 5px;
+}
+nav > ul > li > a:hover {
+  color: rgb(91, 135, 225);
+  box-shadow: 10px 0 0px 0px rgba(228, 224, 224);
+}
+
+/* .assignment{
+ display: flex;
+} */
+/* @media only screen and (max-width:750px) {
+  .back-arrow{
+   left: 66%;
+  }
+} */
+
+.nav-active {
+  transition: all 0.5s ease;
+  transform: translateX(-101%);
+}
+@keyframes NavActiveS {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.nav-active-arrow {
+  transform: translateX(0%);
+}
+.active {
+  transition: all 0.5s ease;
+  left: 10px;
+  transform: rotateY(177deg);
+}
+/* @keyframes NavActiveS {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+} */
+
+/* @media only screen and (max-width:1920px) and (max-width:1080px){
+  .back-arrow{
+    left: 14%;
+  }
+} */
+/* @media screen and (max-width: 1280px) {
+  .back-arrow {
+    left: 19%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .back-arrow {
+    left: 30%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .back-arrow {
+    left: 32%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .back-arrow {
+    left: 33%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .back-arrow {
+    left: 35%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .back-arrow {
+    left: 36%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .back-arrow {
+    left: 40%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .back-arrow {
+    left: 42%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .back-arrow {
+    left: 52.5%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .back-arrow {
+    left: 53.5%;
+  }
+  .active {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .back-arrow {
+    left: 69%;
+  }
+  .active {
+    left: 1%;
+  }
+} */
